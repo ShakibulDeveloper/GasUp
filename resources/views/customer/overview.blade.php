@@ -22,8 +22,8 @@
       </div>
       <div class="col-sm-6 reject_box">
         <div class="validate_btns">
-          <a href="{{route('validate_courier')}}/{{isset($single_courier->id) ? $single_courier->id:''}}">Validate</a>
-          <a href="{{route('reject_courier')}}/{{isset($single_courier->id) ? $single_courier->id:''}}" class="reject_Btn">Reject</a>
+          <a href="{{route('validate_courier', $single_courier->id)}}">Validate</a>
+          <a href="{{route('reject_courier', $single_courier->id)}}" class="reject_Btn">Reject</a>
         </div>
       </div>
     </div>
@@ -33,7 +33,14 @@
         <div class="col-sm-6 profile_left">
           <img src="{{asset('assets/images')}}/{{isset($single_courier->profile_image)?$single_courier->profile_image:'ryan.jpg'}}">
           <h4>{{isset($single_courier->first_name) ? $single_courier->first_name:''}} {{isset($single_courier->last_name) ? $single_courier->last_name:'Liew Yi Xian'}}</h4>
+          
+          @if ($single_courier->validate == false)
           <p>Pending Validation</p>
+          @else
+          <p>Validated</p>
+          @endif
+
+
         </div>
         <div class="col-sm-6 profile_right">
           <ul>

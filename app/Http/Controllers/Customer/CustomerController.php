@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Order;
 use App\Gas;
 use App\Courier;
+use App\User;
 use App\MostPurchase;
 use App\merge\SignUp;
 use Auth;
@@ -167,7 +168,8 @@ class CustomerController extends Controller
 
     public function overview()
     {
-        return view('customer.overview');
+      $single_courier = User::where('_id', Auth::user()->id)->first();
+        return view('customer.overview', compact('single_courier'));
     }
 
 
