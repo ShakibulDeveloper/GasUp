@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user  = new User;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->user_type = 'Customer';
+        $user->user_type = 'Admin';
         $user->first_name = null;
         $user->last_name = null;
         $user->father_name = null;
