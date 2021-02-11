@@ -43,7 +43,7 @@ class CourierController extends Controller
   
     public function validate_courier($id)
     {
-        $update = Courier::where('_id', $id)->first();
+        $update = User::where('_id', $id)->first();
         $update->validate = true;
         $update->save();
 
@@ -60,7 +60,7 @@ class CourierController extends Controller
     }
      public function reject_courier($id=null)
     {
-        $update = Courier::where('_id', $id)->first();
+        $update = User::where('_id', $id)->first();
         $update->validate = false;
         $update->save();
 

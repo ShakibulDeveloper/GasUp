@@ -15,7 +15,7 @@
       <div class="active-order">
           <h5>Active Orders Now</h5>
           <h4>{{ $orders->count() }}</h4>
-          <p>updated at: {{ $last->time }}</p>
+          <p>updated at: {{ $last->time ?? null }}</p>
       </div>
       <div class="order-status">
           <h5>Order Status</h5>
