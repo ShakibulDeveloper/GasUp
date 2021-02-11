@@ -1,0 +1,552 @@
+html,
+
+body,
+
+div,
+
+span,
+
+h1,
+
+h2,
+
+h3,
+
+h4,
+
+h5,
+
+h6,
+
+p,
+
+blockquote,
+
+q,
+
+em,
+
+img,
+
+small,
+
+strong,
+
+dl,
+
+dt,
+
+dd,
+
+ol,
+
+ul,
+
+li,
+
+fieldset,
+
+form,
+
+label,
+
+legend {
+
+    border: 0;
+
+    outline: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 100%;
+
+    vertical-align: baseline;
+
+    background: transparent
+
+}
+
+
+
+body {
+
+    line-height: 1
+
+}
+
+
+
+ol,
+
+ul {
+
+    list-style: none
+
+}
+
+
+
+:focus {
+
+    outline: 0
+
+}
+
+
+
+input,
+
+textarea {
+
+    margin: 0;
+
+    outline: 0;
+
+}
+
+
+
+textarea {
+
+    overflow: auto;
+
+    resize: none;
+
+}
+
+
+
+table {
+
+    border-collapse: collapse;
+
+    border-spacing: 0
+
+}
+
+
+
+article,
+
+aside,
+
+details,
+
+figcaption,
+
+figure,
+
+footer,
+
+header,
+
+hgroup,
+
+nav,
+
+section {
+
+    display: block;
+
+}
+
+
+
+
+
+/* Default Font Styles
+
+______________________*/
+
+
+
+body,
+
+input,
+
+select,
+
+textarea,
+
+p,
+
+a,
+
+b {
+
+    font-family: 'Alata', sans-serif;
+
+    color: #000;
+
+    line-height: 1.4;
+
+}
+
+
+
+html,
+
+body {
+
+    background: #fff !important;
+
+}
+
+
+
+.flash_categories {
+
+    display: none;
+
+}
+
+
+
+*,
+
+*:after,
+
+*:before {
+
+    -webkit-box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    box-sizing: border-box;
+
+}
+
+
+
+
+
+/* Links
+
+______________________*/
+
+
+
+a {
+
+    text-decoration: none !important;
+
+}
+
+
+
+a:hover {
+
+    -webkit-transition: 0.4s;
+
+    -moz-transition: 0.4s;
+
+    -ms-transition: 0.4s;
+
+    -o-transition: 0.4s;
+
+    transition: 0.4s;
+
+}
+
+
+
+
+
+/* p, blockquote, address
+
+______________________*/
+
+
+
+p {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+a:hover,
+
+a:focus {
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+/* Layout 
+
+______________________*/
+
+
+
+.row {
+
+    margin: 0;
+
+}
+
+
+
+.container {
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+}
+
+.left_sidebar{
+
+    padding: 15px 0 29px 0;
+
+    box-shadow: none;
+
+    border-radius: 0;
+
+    background-image: linear-gradient(#5ddca4, #47c0b5, #5ddca4);
+
+    height: 100vh;
+
+    top: 0;
+
+    overflow-y: auto;
+
+    position: fixed;
+
+    left: 0;
+
+    width: 320px;
+
+    padding-left: 0;
+
+    padding-right: 0;
+
+    z-index: 30;
+
+    overflow: hidden;
+
+}
+
+.main_logo{
+
+    text-align: center;
+
+    margin: 34px 0 18px;
+
+}
+
+.main_logo img{
+
+    cursor: pointer;
+
+    width: 157px;
+
+    margin: 0 auto;
+
+}
+
+.main_nav ul{
+
+    padding: 0;
+
+    margin: 0;  
+
+}
+
+.main_nav ul li svg{
+
+    width: 29px;
+
+    vertical-align: middle;
+
+    margin-top: -7px;
+
+}
+
+.main_nav ul li .active,.main_nav ul li a:hover{
+
+    background: #5bdaa5;
+
+    color: #fff;
+
+}
+
+.main_nav ul li a{
+
+    color: #fff;
+
+    width: 100%;
+
+    display: inline-block;
+
+    padding: 12px 12px 12px 20px;
+
+    border-bottom: 1px solid #ffffff57;
+
+}
+
+
+
+
+
+.login_btn .register_btn {
+    float: left;
+    background-image: linear-gradient(#5ddca4, #5bdaa5, #5ddca4);
+        color: #fff;
+    border: none;
+    border-radius: 11px;
+    padding: 13px 39px;
+}
+
+
+/*login*/
+
+
+
+.login_bg {
+    max-width: 485px;
+    margin: 0 0 0 auto;
+    padding: 39px 0;
+}
+.login_page{
+
+    text-align: center;
+
+}
+
+.login_page img{
+
+    width: 192px;
+
+    display: block;
+
+    margin: 0 auto 18px;
+
+}
+
+.login_page h4{
+
+    font-size: 29px;
+
+    margin: 0 0 37px;
+
+}
+
+.form_box{
+
+    position: relative;
+
+}
+
+.form_box input{
+
+    width: 100%;
+
+    background: #f2f2f2;
+
+    border-radius: 12px;
+
+    border: none;
+
+    height: 54px;
+
+    margin: 0 0 12px;
+
+    padding: 0 16px 0 46px;
+
+    /*text-transform: capitalize;*/
+
+}
+
+.form_box svg{
+
+    width: 24px;
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 15px;
+
+}
+
+.forget a{
+
+    display: inline-block;
+
+    margin: 11px 0 14px;
+
+    color: #4ac4b2;
+
+    font-size: 19px;
+
+}
+
+.login_btn{
+
+    text-align: right;
+
+}
+
+.login_btn button{
+
+    background-image: linear-gradient(#5ddca4, #47c0b5, #5ddca4);
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 13px 39px;
+
+}
+
+.google_fonts p{
+
+    margin: 28px 0 0;
+
+    text-align: center;
+
+}
+
+.google_fonts i{
+
+    background: #f2f2f2;
+
+    width: 45px;
+
+    height: 45px;
+
+    display: inline-block;
+
+    border-radius: 100%;
+
+    vertical-align: middle;
+
+    padding: 11px 0 0;
+
+    margin: 0 6px;
+
+    color: #db4437;
+
+    font-size: 23px;
+
+}
+
+.google_fonts .fa-facebook{
+
+    color: #3b5998;
+
+}
