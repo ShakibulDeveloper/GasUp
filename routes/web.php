@@ -68,3 +68,5 @@ Route::get('/customer', 'Customer\CustomerController@customer_view')->name('cust
 Route::get('/all/customer', 'Customer\CustomerController@all_customer')->name('all_customer');
 Route::get('/customer/details/{user_id}', 'Customer\CustomerController@customer_details')->name('customer_details');
 Route::get('/customer/details/all/{user_id}', 'Customer\CustomerController@customer_details_all')->name('customer_details_all');
+
+//pushing updates in github
