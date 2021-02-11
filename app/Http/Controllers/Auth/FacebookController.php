@@ -35,17 +35,18 @@ class FacebookController extends Controller
     {
         try {
             $user = Socialite::driver('facebook')->user();
+
             $create['name'] = $user->getName();
             $create['email'] = $user->getEmail();
             $create['facebook_id'] = $user->getId();
-
+            $create['user_type'] = 'Admin';
 
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
             Auth::loginUsingId($createdUser->id);
 
 
-            return redirect()->route('index');
+            return redirect()->route('home');
 
 
         } catch (Exception $e) {
