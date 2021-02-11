@@ -2,25 +2,25 @@
 @section('content')
 
     {{showFlash()}}
-    
+
     <div class="col-sm-9 right_contents">
     <div class="main_inner_content">
-    
-      
+
+
       <div class="main_heading">
         <h3>Gas Up Sales</h3>
       </div>
-      
+
       <div class="row">
 
         @can('Admin')
-          
+
 
         <div class="col-sm-3">
           <div class="dashboard_icon active_dash">
             <h4>Users</h4>
             <b>{{ userCount() }}</b>
-       
+
           </div>
         </div>
 
@@ -32,7 +32,7 @@
           <div class="dashboard_icon">
             <h4>{{ earnedCost() }}</h4>
             <b>${{ revenue() }}</b>
-         
+
           </div>
         </div>
         <div class="col-sm-3">
@@ -71,7 +71,7 @@
                 "#6fd6a8",
                 "#b2ead1",
                 "#39f9a3",
-                "#2c885f"                
+                "#2c885f"
                 ]);
 
 	var options_2 = {
@@ -168,7 +168,7 @@
 			fontFamily: "calibri",
 			fontSize: 14,
 			itemTextFormatter: function (e) {
-				return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";  
+				return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";
 			}
 		},
 		data: []
@@ -205,7 +205,7 @@
 		$("#backButton").toggleClass("invisible");
 	}
 
-	$("#backButton").click(function() { 
+	$("#backButton").click(function() {
 		$(this).toggleClass("invisible");
 		newVSReturningVisitorsOptions.data = visitorsData["Gas Tank Size"];
 		$("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
@@ -222,7 +222,7 @@ $(document).ready(function(){
 	                "#6fd6a8",
 	                "#b2ead1",
 	                "#39f9a3",
-	                "#2c885f"                
+	                "#2c885f"
 	                ]);
 
 		var options_6 = {
@@ -238,11 +238,11 @@ $(document).ready(function(){
 			data: [{
 				type: "spline", //change it to line, area, bar, pie, etc
 				dataPoints: [
-          
+
         @foreach(revenueChart() as $revenueChart)
 				{ y: {{ $revenueChart->price }} },
         @endforeach
-				
+
 				]
 			}]
 		};

@@ -96,7 +96,7 @@
 
 					<li>
 						<a href="{{ route('courier_overview.index') }}" class="<?php echo (isset($courier_d) && $courier_d == 'active') ? 'active':'' ?>">
-						<img src="{{asset('assets/images/Vector3.png')}}">
+						<img src="{{asset('assets/images/Vector5.png')}}">
 							Courier Overview
 
 						</a>
