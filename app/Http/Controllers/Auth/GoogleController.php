@@ -37,19 +37,40 @@ class GoogleController extends Controller
      
                 Auth::login($finduser);
     
-                return redirect('/index');
+                return redirect()->route('home');
      
             }else{
+
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'password' => encrypt('123456dummy')
+                    'password' => encrypt('12345678'),
+                    'user_type' => "Admin",
+                    'first_name' => null,
+                    'last_name' => null,
+                    'father_name' => null,
+                    'mother_name' => null,
+                    'mobile_number' => null,
+                    'city' => null,
+                    'gender' => null,
+                    'dob' => null,
+                    'date_joining' => null,
+                    'marital_status' => null,
+                    'photo' => null,
+                    'passport_front' => null,
+                    'passport_back' => null,
+                    'address' => null,
+                    'permanent_address' => null,
+                    'work_experience' => null,
+                    'descriptions' => null,
+                    'validate' => false,
+                    'marge_validation' => 0
                 ]);
     
                 Auth::login($newUser);
      
-                return redirect('/index');
+                return redirect()->route('home');
             }
     
         } catch (Exception $e) {
