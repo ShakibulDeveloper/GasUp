@@ -20,9 +20,11 @@ class CourierController extends Controller
 
     public function index()
     {
-        $rejects = Courier::where('validate', false)->get();
-        $valids = Courier::where('validate', true)->get();
-        return view('admin.pages.courier_list', compact('rejects','valids'));
+        $rejects = User::where('validate', false)->get();
+        $valids = User::where('validate', true)->get();
+        $orders = Order::latest()->get();
+        $couriers = User::where('validate', true)->select('_id', 'first_name', 'last_name')->get();
+        return view('admin.pages.courier_list', compact('rejects', 'valids', 'orders', 'couriers'));
     }
     public function sale()
     {
@@ -32,12 +34,12 @@ class CourierController extends Controller
     }
     public function courier_details($id)
     {
-        $single_courier = Courier::where('_id', $id)->first();
+        $single_courier = User::where('_id', $id)->first();
         return view('admin.pages.couriers_d', compact('single_courier'));
     }
     public function courier_detail($id)
     {
-        $single_courier = Courier::where('_id', $id)->first();
+        $single_courier = User::where('_id', $id)->first();
         return view('admin.pages.courier_details', compact('single_courier'));
     }
   
