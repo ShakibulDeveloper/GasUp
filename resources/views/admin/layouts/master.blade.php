@@ -72,7 +72,12 @@
 							Overview
 						</a>
 					</li>
-
+					<li>
+						<a href="{{ route('addNewUser') }}" class="{{ request()->routeIs('apply_for_courier') ? 'active' : '' }}">
+						<img src="{{asset('assets/images/Vector5.png')}}">
+							Apply for Courier
+						</a>
+					</li>
 					<li>
 						<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 			 <img src="{{asset('assets/images/Vector4.png')}}"> Log Out

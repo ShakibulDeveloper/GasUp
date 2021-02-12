@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 @section('content')
 <div class="col-sm-9 right_contents">
-  
+
   {{showFlash()}}
   <div class="card">
      <div class="row">
       <div class="col-sm-12">
         <div class="panel panel-info">
           <div class="panel-body">
-            <form action="{{route('creatuser')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('update_courier')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="row" style="margin-top:15px">
                 <div class="col-sm-12">
@@ -16,7 +16,7 @@
                     <div class="card-header card_header_bg">
                       <h6 class="mb-0">Apply For Courierman</h6>
                     </div>
-                    <div class="card-body">   
+                    <div class="card-body">
                       <div class="row">
                         <input type="hidden" name="id" value="@isset($model->id){{$model->id}}@endisset">
                         <div class="col-sm-3">
@@ -48,16 +48,16 @@
                         <div class="col-sm-3">
                           <div class="form-group">
                              <label>Email/Username</label>
-                             <input type="text" name="email" required="" value="@isset($model->email){{$model->email}}@endisset" class="form-control" placeholder="Enter Email">
+                             <input type="text" name="email" required="" value="{{ Auth::user()->email }}" class="form-control" placeholder="Enter Email">
                           </div>
                         </div>
                         <div class="col-sm-2">
                           <div class="form-group">
                             <label>Password</label>
                             @if(isset($model->password) && $model->password)
-                            <input type="password" name="password" value="" class="form-control" placeholder="">
+                            <input type="password" name="password" value="{{ Auth::user()->password }}" class="form-control" placeholder="">
                             @else
-                            <input type="password" name="password" value="" required="" class="form-control" placeholder="Enter Password">
+                            <input type="password" name="password" value="{{ Auth::user()->password }}" required="" class="form-control" placeholder="Enter Password">
                             @endif
                           </div>
                         </div>
@@ -179,5 +179,3 @@
   </div>
 </div>
 @endsection('content')
-
-

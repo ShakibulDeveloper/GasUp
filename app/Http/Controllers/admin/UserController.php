@@ -63,7 +63,7 @@ class UserController extends Controller
                     else
                     {
                         $response['errors']='Error occurred try later!';
-                    }   
+                    }
                 }
         }
         return redirect('/userroles')->with($response);
@@ -205,7 +205,7 @@ class UserController extends Controller
         $user->save();
 
 
-        
+
         if ($request->hasFile('photo')) {
             $photo_upload     =  $request ->photo;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();
@@ -216,7 +216,7 @@ class UserController extends Controller
             ]);
       }
 
-        
+
         if ($request->hasFile('passport_front')) {
             $photo_upload     =  $request ->passport_front;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();
@@ -227,7 +227,7 @@ class UserController extends Controller
             ]);
       }
 
-        
+
         if ($request->hasFile('passport_back')) {
             $photo_upload     =  $request ->passport_back;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();

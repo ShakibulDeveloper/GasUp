@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Order;
 use App\Courier;
+use Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -29,7 +30,7 @@ class CourierController extends Controller
     public function sale()
     {
         $data=[];
-        $data['sale']='active'; 
+        $data['sale']='active';
         return view('admin.pages.sale',$data);
     }
     public function courier_details($id)
@@ -42,7 +43,7 @@ class CourierController extends Controller
         $single_courier = User::where('_id', $id)->first();
         return view('admin.pages.courier_details', compact('single_courier'));
     }
-  
+
     public function validate_courier($id)
     {
         $update = User::where('_id', $id)->first();
@@ -89,7 +90,40 @@ class CourierController extends Controller
     }
 
 
+    public function update_courier(Request $request)
+    {
 
+      User::where('email', Auth::user()->email)->update([
+
+        'email' => $request->email,
+        'password' => $request->password,
+        'first_name' => $request->first_name,
+        'last_name' => $request->last_name,
+        'father_name' => $request->father_name,
+        'mother_name' => $request->mother_name,
+        'email' => $request->email,
+        'password' => $request->password,
+        'mobile_number' => $request->mobile_number,
+        'passport' => $request->passport,
+        'city' => $request->city,
+        'gender' => $request->gender,
+        'dob' => $request->dob,
+        'date_joining' => $request->date_joining,
+        'marital_status' => $request->marital_status,
+        'photo' => $request->photo,
+        'passport_front' => $request->passport_front,
+        'passport_back' => $request->passport_back,
+        'address' => $request->address,
+        'permanent_address' => $request->permanent_address,
+        'work_experience' => $request->work_experience,
+        'descriptions' => $request->descriptions,
+        'marge_validation' => 0,
+
+      ]);
+
+      return back();
+
+    }
 
 
 

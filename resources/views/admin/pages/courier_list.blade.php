@@ -12,7 +12,7 @@
   <div class="main_inner_content">
 
     @include('component.search')
-  
+
     <div class="bredcrums">
       <ul>
         <li><a href="#" class="active">Couriers Overview</a></li>
@@ -42,7 +42,7 @@
             </tr>
           </thead>
           <tbody>
-     
+
             @foreach($rejects as $reject)
             <tr>
               <td><span class="red"></span>{{isset($reject->first_name) ? $reject->first_name:'No Name'}} {{isset($reject->last_name) ? $reject->last_name:''}}</td>
@@ -53,7 +53,7 @@
               <td><a href="{{route('courier_detail')}}/{{isset($reject->id) ? $reject->id:''}}">View Details</a></td>
             </tr>
             @endforeach
-    
+
           </tbody>
         </table>
       </div>
@@ -130,12 +130,12 @@
               <td>
                  <select name="delivered_by" id="" class="form-control">
                    @foreach ($couriers as $courier)
-                     <option value="{{ $courier->_id }}" 
+                     <option value="{{ $courier->_id }}"
                       {{ $courier->_id ===  $order->delivered_by ? 'selected' : null}}>
                       {{ $courier->first_name }} {{ $courier->last_name }}
                     </option>
                    @endforeach
-                 
+
                         </select>
               </td>
 
@@ -160,7 +160,7 @@
           </tbody>
         </table>
       </div>
-    
+
     </div>
 
 

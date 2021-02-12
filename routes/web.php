@@ -31,6 +31,7 @@ Route::get('/gas/calc/price', 'GasController@calc_gas_price')->name('calc.gas.pr
 
 Route::get('/recent/delivery', 'admin\CourierController@recent_delivery')->name('recent_delivery');
 Route::post('/recent/delivery/store', 'admin\CourierController@recent_delivery_store')->name('recent_delivery_store');
+Route::post('/update/courier/apply', 'admin\CourierController@update_courier')->name('update_courier');
 
 // ----------------------------------------------------------------------------------------------
 
