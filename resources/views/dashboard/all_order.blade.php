@@ -9,7 +9,7 @@
           </form>
       </div>
       <div class="order-title">
-          <h3>Recent Delivaries</h3>
+          <h3>Recent Deliveries</h3>
       </div>
       <div class="clr"></div>
       <div class="data-table fix-height">
