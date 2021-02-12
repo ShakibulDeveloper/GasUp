@@ -24,7 +24,32 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
      * @var array
      */
     protected $fillable = [
-         'name', 'email', 'password', 'facebook_id', 'google_id', 'marge_validation',
+         'name', 
+         'email', 
+         'password', 
+         'facebook_id', 
+         'google_id', 
+         'marge_validation',
+        'user_type',
+        'first_name',
+        'last_name',
+        'father_name',
+        'mother_name',
+        'mobile_number',
+        'city',
+        'gender',
+        'dob',
+        'date_joining',
+        'marital_status',
+        'photo',
+        'passport_front',
+        'passport_back',
+        'address',
+        'permanent_address',
+        'work_experience',
+        'descriptions',
+        'validate'
+
     ];
 
     /**

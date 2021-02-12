@@ -2,10 +2,11 @@
 @section('content')
 <div class="col-sm-9 right_contents">
   <div class="main_inner_content">
-    <div class="search_bar">
-      <i class="fa fa-search"></i>
-      <input type="text" placeholder="Search order ID Tracking Order's , Customer Details" name="">
-    </div>
+    
+
+    @include('component.search')
+
+
     <div class="bredcrums">
       <ul>
         <li><a href="#" class="<?php echo (isset($active) && $active == 'courier_overview') ? 'active':''; ?>">Couriers Overview</a></li>
@@ -93,6 +94,11 @@
         </div>
       </div>
     </div>
+
+
+    
+
+    
   </div>
 </div>
 @endsection

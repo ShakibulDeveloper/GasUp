@@ -7,6 +7,9 @@
     <div class="main_inner_content">
 
 
+		@include('component.search')
+    
+
       <div class="main_heading">
         <h3>Gas Up Sales</h3>
       </div>

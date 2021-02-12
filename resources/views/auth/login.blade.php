@@ -174,10 +174,13 @@
                             {{ __('LOGIN') }}
                         </button>
                     </div>
-                    {{-- <div class="google_fonts">
-                        <p>Login with <a href="{{ url('auth/google') }}"><i class="fa fa-google"></i></a><a href="{{ url('auth/google') }}"> <i class="fa fa-facebook"></i></a></p>
+                    <div class="google_fonts">
+                        <p>Login with 
+                            <a href="{{ url('auth/google') }}"><i class="fa fa-google"></i></a>
+                            <a href="{{ url('auth/facebook') }}"> <i class="fa fa-facebook"></i></a>
+                        </p>
 
-                    </div> --}}
+                    </div>
                 </form>
             </div>
         </div>

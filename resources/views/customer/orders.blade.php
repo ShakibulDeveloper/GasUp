@@ -10,6 +10,8 @@
 
 <div class="col-sm-9 right_contents">
   <div class="main_inner_content">
+
+    @include('component.search')
    
     <div class="bredcrums">
       <ul>
