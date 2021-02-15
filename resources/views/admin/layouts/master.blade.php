@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--<![endif]-->
-<head>
+<head xmlns:ng="https://angularjs.org">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Gas Up</title>
@@ -16,6 +16,46 @@
 	  .ui-tabs-anchor {
 	    outline: none;
 	  }
+		.canvasjs-chart-credit,.highcharts-axis-title,.highcharts-point,.highcharts-title{
+			opacity: 0;
+		}
+		.highcharts-background{
+			fill: #f6f6f6;
+		}
+		.highcharts-graph {
+			stroke: #259975;
+		}
+		.graphCircle{
+			width: 240px;
+			height: 240px;
+			border: 40px solid #17bf83;
+			border-radius: 50%;
+		}
+		.graphCircle h2 {
+			font-size: 28px;
+			padding-top: 50px;
+		}
+		.small_dot{
+			margin-bottom: 20px;
+		}
+		.graphInfo {
+		position: absolute;
+		right: 25px;
+		bottom: 65px;
+		}
+		.sd{
+			position: relative;
+		}
+		.sd::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: -26px;
+			width: 15px;
+			height: 15px;
+			background: #17bf83;
+			border-radius: 50%;
+		}
 	</style>
 </head>
 <body id="page-name">
@@ -162,6 +202,8 @@
 	<!-- <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script> -->
 	<script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
 	<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.21/angular.js"></script>
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
 	<!-- <script src="{{asset('assets/plugins/chartJs/Chart.min.js')}}"></script> -->
 	{{-- <script src="{{asset('assets/js/charts.js')}}"></script> --}}
 
