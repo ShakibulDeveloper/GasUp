@@ -128,6 +128,9 @@
           <!-- <img src="{{asset('assets/images/graph852.jpg')}}"> -->
           {{-- <div id="courierChartContainer" style="height: 300px; width: 100%;"></div> --}}
           <div id="bar_canvasjs" style="height: 300px; width: 100%;"></div>
+          <div class="calander">
+            <p>Today <i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
         </div>
       </div>
       <div class="col-sm-4 card_pasport">
@@ -154,6 +157,9 @@
                 <h3>0</h3>
             </div>
           </div>
+          <div class="calander">
+            <p>Today <i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
         </div>
       </div>
     </div>
@@ -167,6 +173,33 @@
           </p>
           <!-- <img src="{{asset('assets/images/graph125.jpg')}}"> -->
           {{-- <div id="courierChartContainer2" style="height: 300px; width: 100%;"></div> --}}
+
+          <div class="graphCircle graphCircle2  text-center">
+            <div class="mt-5">
+              <h4><b>5/5</b></h4>
+              <h4>Stars</h4>
+            </div>
+          </div>
+          <div class="graphInfo graphInfo2">
+            <div class="small_dot sd">
+                <h3>5/5</h3>
+            </div>
+            <div class="small_dot sd">
+              <h3>4/5</h3>
+            </div>
+            <div class="small_dot sd">
+              <h3>3/5</h3>
+            </div>
+            <div class="small_dot sd">
+              <h3>2/5</h3>
+            </div>
+            <div class="small_dot sd">
+              <h3>1/5</h3>
+            </div>
+          </div>
+          <div class="calander">
+            <p>Today <i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+          </div>
         </div>
       </div>
       <div class="col-sm-6 card_pasport">
@@ -187,6 +220,9 @@
             </div>
           </div> --}}
               <div id="lineGraph" style="height: 400px; width: 500px"></div>
+              <div class="calander">
+                <p>Today <i class="fa fa-sort-desc" aria-hidden="true"></i></p>
+              </div>
         </div>
       </div>
     </div>

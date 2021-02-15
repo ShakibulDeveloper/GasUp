@@ -56,6 +56,25 @@
 			background: #17bf83;
 			border-radius: 50%;
 		}
+		.graphCircle2{
+			width: 300px;
+			height: 300px;
+			border: 60px solid #17bf83;
+		}
+		.graphCircle2 h4{
+			font-size: 30px;
+
+		}
+		.graphInfo2 {
+	position: absolute;
+	right: 50px;
+	bottom: 110px;
+}
+.calander{
+	position: absolute;
+	top: 50px;
+	right: 60px;
+}
 	</style>
 </head>
 <body id="page-name">
