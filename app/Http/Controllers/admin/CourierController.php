@@ -114,7 +114,7 @@ class CourierController extends Controller
         if ($files = $request->file('photo')) {
        	// Define upload path
            $destinationPath = public_path('/uploads/'); // upload path
-		// Upload Orginal Image           
+		// Upload Orginal Image
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
 
@@ -123,8 +123,8 @@ class CourierController extends Controller
 
         if ($files = $request->file('passport_front')) {
        	// Define upload path
-           $destinationPath = public_path('/uploads/'); // upload path
-		// Upload Orginal Image           
+           $destinationPath = public_path('/passport_front/'); // upload path
+		// Upload Orginal Image
            $passport_front = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $passport_front);
 
@@ -133,14 +133,14 @@ class CourierController extends Controller
 
         if ($files = $request->file('passport_back')) {
        	// Define upload path
-           $destinationPath = public_path('/uploads/'); // upload path
-		// Upload Orginal Image           
+           $destinationPath = public_path('/passport_back/'); // upload path
+		// Upload Orginal Image
            $passport_back = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $passport_back);
 
            $insert['passport_back'] = $passport_back;
         }
-        
+
         $user->photo=$profileImage;
         $user->passport_front=$passport_front;
         $user->passport_back=$passport_back;
@@ -153,7 +153,7 @@ class CourierController extends Controller
 
 
 
-       
+
 
       return back();
 

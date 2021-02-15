@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-sm-9 right_contents">
   <div class="main_inner_content">
-    
+
 
     @include('component.search')
 
@@ -34,7 +34,7 @@
         <div class="col-sm-6 profile_left">
           <img src="{{ asset('public/uploads/'.$single_courier->photo) }}">
           <h4>{{isset($single_courier->first_name) ? $single_courier->first_name:''}} {{isset($single_courier->last_name) ? $single_courier->last_name:'Liew Yi Xian'}}</h4>
-          
+
           @if ($single_courier->validate == false)
           <p>Pending Validation</p>
           @else
@@ -75,11 +75,11 @@
           <p><b>My/Passport</b> {{isset($single_courier->cnic)?$single_courier->cnic:'0000000-00-000'}}</p>
           <div class="row">
             <div class="col-sm-6 left_card">
-              <img src="{{asset('public/uploads/'.$single_courier->passport_front)}}">
+              <img src="{{asset('public/passport_front/'.$single_courier->passport_front)}}">
               <b>Front Picture</b>
             </div>
             <div class="col-sm-6 left_card">
-              <img src="{{asset('public/uploads/'.$single_courier->passport_back)}}">
+              <img src="{{asset('public/passport_back/'.$single_courier->passport_back)}}">
               <b>Back Picture</b>
             </div>
           </div>
@@ -96,9 +96,9 @@
     </div>
 
 
-    
 
-    
+
+
   </div>
 </div>
 @endsection

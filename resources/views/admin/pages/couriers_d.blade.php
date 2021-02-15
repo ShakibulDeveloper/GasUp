@@ -25,7 +25,7 @@
     <div class="profile_box padd_btm">
       <div class="row">
         <div class="col-sm-6 profile_left">
-          <img src="{{asset('public/uploads/'.$single_courier->passport_back)}}">
+          <img src="{{asset('public/uploads/'.$single_courier->photo)}}">
           <h4>{{isset($single_courier->first_name) ? $single_courier->first_name:''}} {{isset($single_courier->last_name) ? $single_courier->last_name:'Liew Yi Xian'}}</h4>
           <ul>
             <li><a href="#"><i class="fa fa-star"></i></a></li>

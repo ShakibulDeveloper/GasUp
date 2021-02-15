@@ -65,11 +65,11 @@
           <p><b>My/Passport</b> {{isset($single_courier->passport)?$single_courier->passport:'0000000-00-000'}}</p>
           <div class="row">
             <div class="col-sm-6 left_card">
-              <img src="{{asset('public/uploads/'.$single_courier->passport_front)}}">
+              <img src="{{asset('public/passport_front/'.$single_courier->passport_front)}}">
               <b>Front Picture</b>
             </div>
             <div class="col-sm-6 left_card">
-              <img src="{{asset('public/uploads/'.$single_courier->passport_back)}}">
+              <img src="{{asset('public/passport_back/'.$single_courier->passport_back)}}">
               <b>Back Picture</b>
             </div>
           </div>
