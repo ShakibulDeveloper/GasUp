@@ -3,7 +3,7 @@
 <div class="col-sm-9 right_contents">
   <div class="main_inner_content">
     @include('component.search')
-    
+
     <div class="bredcrums">
       <ul>
         <li><a href="#" class="<?php echo (isset($active) && $active == 'courier_overview') ? 'active':''; ?>">Couriers Overview</a></li>
@@ -29,7 +29,7 @@
     <div class="profile_box">
       <div class="row">
         <div class="col-sm-6 profile_left">
-          <img src="{{asset('assets/images')}}/{{isset($single_courier->profile_image)?$single_courier->profile_image:'ryan.jpg'}}">
+          <img src="{{ asset('public/uploads/'.$single_courier->photo) }}">
           <h4>{{isset($single_courier->first_name) ? $single_courier->first_name:''}} {{isset($single_courier->last_name) ? $single_courier->last_name:'Liew Yi Xian'}}</h4>
           <p>Pending Validation</p>
         </div>
@@ -65,11 +65,11 @@
           <p><b>My/Passport</b> {{isset($single_courier->passport)?$single_courier->passport:'0000000-00-000'}}</p>
           <div class="row">
             <div class="col-sm-6 left_card">
-              <img src="{{asset('assets/images')}}/{{isset($single_courier->card_front)?$single_courier->card_front:'master_photo.jpg'}}">
+              <img src="{{asset('public/uploads/'.$single_courier->passport_front)}}">
               <b>Front Picture</b>
             </div>
             <div class="col-sm-6 left_card">
-              <img src="{{asset('assets/images')}}/{{isset($single_courier->card_back)?$single_courier->card_back:'mastder_photo.jpg'}}">
+              <img src="{{asset('public/uploads/'.$single_courier->passport_back)}}">
               <b>Back Picture</b>
             </div>
           </div>
@@ -79,7 +79,7 @@
         <div class="inner_card last_box">
           <p><b>Selfie Of Courier</b> </p>
           <div class="selfiebox">
-            <img src="{{asset('assets/images')}}/{{isset($single_courier->profile_image)?$single_courier->profile_image:'ryan.jpg'}}">
+            <img src="{{ asset('public/uploads/'.$single_courier->photo) }}">
           </div>
         </div>
       </div>
