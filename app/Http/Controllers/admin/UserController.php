@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-    	// $this->middleware('auth');
+    	$this->middleware('auth');
     }
 
     public function index()
@@ -23,7 +23,8 @@ class UserController extends Controller
     }
     public function addNewUser()
     {
-        return view('admin.users.creat_user');
+        $model = User::findOrFail(Auth::user()->id);
+        return view('admin.users.creat_user', compact('model'));
     }
     public function userroles()
     {

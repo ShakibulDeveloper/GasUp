@@ -21,6 +21,7 @@
                         <input type="hidden" name="id" value="@isset($model->id){{$model->id}}@endisset">
                         <div class="col-sm-3">
                             <div class="form-group">
+                                
                                <label>First Name</label>
                                <input type="text" name="first_name" required="" value="@isset($model->first_name){{$model->first_name}}@endisset" class="form-control" placeholder="Enter first name">
                             </div>

@@ -249,3 +249,8 @@ function avatar()
 {
     return asset('public/ava.png');
 }
+
+function user_photo()
+{
+    return User::where('id', Auth::user()->id)->first();
+}

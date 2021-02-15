@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\DB;
+use Image;
+
 class CourierController extends Controller
 {
     public function __construct()
@@ -93,33 +95,65 @@ class CourierController extends Controller
     public function update_courier(Request $request)
     {
 
-      User::where('email', Auth::user()->email)->update([
+      $user = User::where('_id', Auth::user()->id)->first();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->father_name = $request->father_name;
+        $user->mother_name = $request->mother_name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->mobile_number = $request->mobile_number;
+        $user->passport = $request->passport;
+        $user->city = $request->city;
+        $user->gender = $request->gender;
+        $user->dob = $request->dob;
+        $user->date_joining = $request->date_joining;
+        $user->marital_status = $request->marital_status;
 
-        'email' => $request->email,
-        'password' => $request->password,
-        'first_name' => $request->first_name,
-        'last_name' => $request->last_name,
-        'father_name' => $request->father_name,
-        'mother_name' => $request->mother_name,
-        'email' => $request->email,
-        'password' => $request->password,
-        'mobile_number' => $request->mobile_number,
-        'passport' => $request->passport,
-        'city' => $request->city,
-        'gender' => $request->gender,
-        'dob' => $request->dob,
-        'date_joining' => $request->date_joining,
-        'marital_status' => $request->marital_status,
-        'photo' => $request->photo,
-        'passport_front' => $request->passport_front,
-        'passport_back' => $request->passport_back,
-        'address' => $request->address,
-        'permanent_address' => $request->permanent_address,
-        'work_experience' => $request->work_experience,
-        'descriptions' => $request->descriptions,
-        'marge_validation' => 0,
 
-      ]);
+        if ($files = $request->file('photo')) {
+       	// Define upload path
+           $destinationPath = public_path('/uploads/'); // upload path
+		// Upload Orginal Image           
+           $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $files->move($destinationPath, $profileImage);
+
+           $insert['photo'] = $profileImage;
+        }
+
+        if ($files = $request->file('passport_front')) {
+       	// Define upload path
+           $destinationPath = public_path('/uploads/'); // upload path
+		// Upload Orginal Image           
+           $passport_front = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $files->move($destinationPath, $passport_front);
+
+           $insert['passport_front'] = $passport_front;
+        }
+
+        if ($files = $request->file('passport_back')) {
+       	// Define upload path
+           $destinationPath = public_path('/uploads/'); // upload path
+		// Upload Orginal Image           
+           $passport_back = date('YmdHis') . "." . $files->getClientOriginalExtension();
+           $files->move($destinationPath, $passport_back);
+
+           $insert['passport_back'] = $passport_back;
+        }
+        
+        $user->photo=$profileImage;
+        $user->passport_front=$passport_front;
+        $user->passport_back=$passport_back;
+
+        $user->address = $request->address;
+        $user->permanent_address = $request->permanent_address;
+        $user->work_experience = $request->work_experience;
+        $user->descriptions = $request->descriptions;
+        $user->save();
+
+
+
+       
 
       return back();
 
